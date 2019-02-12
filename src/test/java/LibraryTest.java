@@ -7,11 +7,15 @@ public class LibraryTest {
 
     private Library library;
     private Book book1;
+    private Book book2;
+    private Book book3;
 
     @Before
     public void before(){
-        library = new Library();
-//        book1 = new Book();
+        library = new Library(2);
+        book1 = new Book("The Shining", "Stephen King", "Horror");
+        book2 = new Book("It", "Stepehn King", "Horror");
+        book3 = new Book("Rebus", "Ian Rankin", "Crime");
     }
 
     @Test
@@ -20,9 +24,18 @@ public class LibraryTest {
     }
 
     @Test
-    public void canAddToQueue(){
+    public void canAddBook(){
         library.addBook(book1);
         assertEquals(1, library.getBookCount());
+    }
+
+    @Test
+    public void cantAddMoreThanCapacity(){
+        library.addBook(book1);
+        library.addBook(book2);
+        library.addBook(book3);
+        assertEquals(2, library.getBookCount());
+
     }
 
 }
