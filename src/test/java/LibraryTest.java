@@ -35,7 +35,15 @@ public class LibraryTest {
         library.addBook(book2);
         library.addBook(book3);
         assertEquals(2, library.getBookCount());
-
     }
+
+    @Test
+    public void canRemoveBorrowedBookFromLibrary(){
+        library.addBook(book1);
+        library.removeBook();
+        assertEquals(0, library.getBookCount());
+    }
+
+
 
 }
