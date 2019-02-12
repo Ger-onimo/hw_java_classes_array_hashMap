@@ -14,7 +14,7 @@ public class LibraryTest {
     public void before(){
         library = new Library(2);
         book1 = new Book("The Shining", "Stephen King", "Horror");
-        book2 = new Book("It", "Stepehn King", "Horror");
+        book2 = new Book("It", "Stephen King", "Horror");
         book3 = new Book("Rebus", "Ian Rankin", "Crime");
     }
 
@@ -44,6 +44,10 @@ public class LibraryTest {
         assertEquals(0, library.getBookCount());
     }
 
-
+    @Test
+    public void canCountBooksByGenre(){
+        library.addBook(book3);;
+        assertEquals(1, library.getBookGenreCount("Crime"));
+    }
 
 }

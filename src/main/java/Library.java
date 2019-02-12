@@ -24,5 +24,14 @@ public class Library {
         this.books.remove(0);
         return null;
     }
+
+    public void bookGenre(genre){
+        new hashMap
+        iterate over ArrayList
+        find all books of the genre passed as arg
+        add to total count of the genre = value
+        put in hashMap
+    }
+
 }
 
